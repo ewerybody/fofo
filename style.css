@@ -1,0 +1,503 @@
+﻿/*
+Theme Name: Fofo
+Description: minimal WordPress theme
+Version: 1.0
+Author: ëRiC
+*/
+
+:root {
+  --col-txt: #333;
+  --col-txt2: #fff;
+  --col-bg: #fff;
+  --font-serif:
+}
+
+body {
+  font-family: 'SourceSans3', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--col-bg);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+#header-logo {
+  display: inline-block;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  top: .4rem;
+}
+
+.header-content {
+  margin: auto;
+  max-width: 800px;
+}
+
+.site-title {
+  margin: 3px;
+}
+
+.site-title a {
+  font-family: 'SourceSerif4', serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--col-txt);
+}
+
+a {
+  color: var(--col-txt);
+}
+
+h1, h2, h3 {
+  color: var(--col-txt);
+  font-family: 'SourceSerif4', serif;
+}
+
+#overlay-open,
+#overlay-close {
+	position: absolute;
+	top: 5px;
+	right: auto;
+	width: 40px;
+	height: 40px;
+}
+#overlay-open {
+	z-index: 100;
+    font-size: large;
+}
+
+.menu-overlay {display: none;}
+.menu-overlay-x {display: block;}
+
+.overlay-btn {
+	border: none;
+	outline: none;
+}
+.overlay-btn {
+	display: block;
+	margin: 0;
+	padding: 0;
+	z-index: 9999;
+	background: transparent;
+	line-height: 1;
+	opacity: 1;
+}
+
+#overlay-close {
+	z-index: 1000;
+}
+.overlay-btn span {
+	display: none;
+}
+.overlay-btn:before {
+	display: block;
+    content: '☰';
+}
+.overlay-btn-x:before {
+    content: '⛌';
+}
+.close-btn-wrap {
+	height: 51px;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+}
+
+.post {
+  margin-bottom: 40px;
+}
+
+.post-content {
+  font-size: 1.1em;
+}
+
+.post-with-thumbnail {
+  margin-bottom: 3px;
+}
+
+.post-no-thumbnail {
+  background: var(--col-txt2);
+  margin-bottom: 20px;
+}
+
+.post-thumbnail-container {
+  position: relative;
+  min-height: 450px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+}
+
+.post-thumbnail-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.post-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0000, #0000, #000a);
+  color: var(--col-txt2);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  z-index: 2;
+  text-align: left;
+}
+
+.overlay-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.post-overlay h2 {
+  color: var(--col-txt2);
+  margin-bottom: -15px;
+  font-size: 2.5em;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.post-overlay h2 a {
+  color: var(--col-txt2);
+  text-decoration: none;
+}
+
+.post-overlay h2 a:hover {
+  color: var(--col-txt2);
+  text-decoration: underline;
+}
+
+.post-overlay .post-content {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  position: fixed;
+  z-index: 1337;
+  background-color: var(--col-bg);
+}
+
+nav ul li {
+  margin: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #007cba;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    padding: 15px;
+  }
+
+  h1, .has-large-font-size {
+    font-size: 1.5em !important;
+  }
+
+  h2, .post-overlay h2 {
+    font-size: 1.7em;
+    margin-bottom: -8px;
+  }
+
+  .post-content {
+    font-size: 0.8em;
+  }
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-ExtraBold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-ExtraLightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerif4';
+  src: url('assets/fonts/SourceSerif4-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-ExtraLightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-ExtraBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-ExtraBoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SourceSans3';
+    src: url('assets/fonts/SourceSans3-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

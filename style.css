@@ -41,10 +41,14 @@ header {
 .header-content {
   margin: auto;
   max-width: 800px;
+  display: flex;
+  flex-direction: row;
 }
 
 .site-title {
   margin: 3px;
+  align-self: center;
+  width: 100%;
 }
 
 .site-title a {
@@ -63,27 +67,21 @@ h1, h2, h3 {
   font-family: 'SourceSerif4', serif;
 }
 
-#overlay-open,
-#overlay-close {
-	position: absolute;
-	top: 5px;
-	right: auto;
-	width: 40px;
-	height: 40px;
-}
-#overlay-open {
-	z-index: 100;
-    font-size: large;
+.overlay-open,
+.overlay-close {
+	left: 5px;
 }
 
 .menu-overlay {display: none;}
 .menu-overlay-x {display: block;}
 
-.overlay-btn {
+.header-icon {
+	position: relative;
+	top: 5px;
+	width: 40px;
+	height: 40px;
 	border: none;
 	outline: none;
-}
-.overlay-btn {
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -91,15 +89,10 @@ h1, h2, h3 {
 	background: transparent;
 	line-height: 1;
 	opacity: 1;
+    font-size: large;
 }
 
-#overlay-close {
-	z-index: 1000;
-}
-.overlay-btn span {
-	display: none;
-}
-.overlay-btn:before {
+.overlay-open:before {
 	display: block;
     content: '☰';
 }
@@ -110,6 +103,10 @@ h1, h2, h3 {
 	height: 51px;
 	border-bottom: 1px solid #ddd;
 	background: #fff;
+}
+
+.social-icon {
+    right: 5px;
 }
 
 .post {
@@ -172,7 +169,7 @@ h1, h2, h3 {
   color: var(--col-txt2);
   margin-bottom: -15px;
   font-size: 2.5em;
-  font-weight: 700;
+  font-weight: 600;
   display: block;
   line-height: 1;
 }

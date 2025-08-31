@@ -15,13 +15,18 @@
 
 <header>
   <div class="header-content">
+    <button class="overlay-open header-icon"></button>
+
     <h1 class="site-title">
       <a href="<?php echo home_url(); ?>">
-        <img id="header-logo" src="http://nascenteviva.com/wp-content/uploads/2021/07/NV-Logo.jpg">
+        <img id="header-logo" src="<?php echo bloginfo('template_url')?>/assets/nv.svg">
         <?php bloginfo('name'); ?>
       </a>
     </h1>
-    <button id="overlay-open" class="overlay-open overlay-btn"></button>
+
+    <a class="social-icon header-icon" href="https://www.instagram.com/nascentevivadourados" target="_blank">
+        <img src="<?php echo bloginfo('template_url')?>/assets/insta.svg">
+    </a>
 
     <nav class="menu-overlay" role="navigation">
       <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => false,)); ?>

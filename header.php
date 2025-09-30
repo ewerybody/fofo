@@ -32,5 +32,5 @@
       <?php wp_nav_menu( array( 'theme_location' => 'main-menu', 'container' => false,)); ?>
     </nav>
   </div>
-
+  <ul class="lang-list"><?php pll_the_languages(); ?></ul>
 </header>

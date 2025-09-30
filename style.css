@@ -43,7 +43,23 @@ header {
   max-width: 800px;
   display: flex;
   flex-direction: row;
+
+ul.lang-list {
+    list-style: none;
+    display: inline-flex;
+    margin: 5px;
 }
+
+li.lang-item a {
+  text-decoration: none;
+  border-right: 1.5px solid;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: smaller;
+}
+li.lang-item:last-child a {border:none}
+li.lang-item a:hover {text-decoration: underline;}
+li.lang-item.current-lang {font-weight: bold;}
 
 .site-title {
   margin: 3px;

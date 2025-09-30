@@ -94,20 +94,21 @@ h1, h2, h3 {
 .menu-overlay-x {display: block;}
 
 .header-icon {
-	position: relative;
-	top: 5px;
-	width: 40px;
-	height: 40px;
-	border: none;
-	outline: none;
-	display: block;
-	margin: 0;
-	padding: 0;
-	z-index: 9999;
-	background: transparent;
-	line-height: 1;
-	opacity: 1;
-    font-size: large;
+  position: relative;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+  background: transparent;
+  line-height: 0;
+  opacity: 1;
+  font-size: large;
+  align-content: center;
 }
 
 .overlay-open:before {

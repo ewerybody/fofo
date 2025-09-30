@@ -43,6 +43,8 @@ header {
   max-width: 800px;
   display: flex;
   flex-direction: row;
+  position: relative;
+}
 
 ul.lang-list {
     list-style: none;
@@ -209,8 +211,10 @@ nav ul {
   list-style: none;
   padding: 0;
   text-align: left;
-  position: fixed;
+  position: absolute;
   z-index: 1337;
+  top: 35px;
+  left: 0px;
   background-color: var(--col-bg);
 }
 

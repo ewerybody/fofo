@@ -9,7 +9,7 @@ Author: ëRiC
   --col-txt: #333;
   --col-txt2: #fff;
   --col-bg: #fff;
-  --font-serif:
+  --shadow: 0 3px 20px #0004;
 }
 
 body {
@@ -22,20 +22,21 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 45px 0 25px 0;
 }
 
 header {
   text-align: center;
+  padding-bottom: 8px;
 }
 
 #header-logo {
   display: inline-block;
   margin: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 36px;
+  height: 36px;
   position: relative;
-  top: .4rem;
+  top: 1px;
 }
 
 .header-content {
@@ -49,14 +50,15 @@ header {
 ul.lang-list {
     list-style: none;
     display: inline-flex;
-    margin: 5px;
+    margin: 1px;
+    padding-left: 0;
 }
 
 li.lang-item a {
   text-decoration: none;
   border-right: 1.5px solid;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
   font-size: smaller;
 }
 li.lang-item:last-child a {border:none}
@@ -64,14 +66,15 @@ li.lang-item a:hover {text-decoration: underline;}
 li.lang-item.current-lang {font-weight: bold;}
 
 .site-title {
-  margin: 3px;
+  margin: 0px;
   align-self: center;
   width: 100%;
+  font-size: 2.6em;
 }
 
 .site-title a {
   font-family: 'SourceSerif4', serif;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   color: var(--col-txt);
 }
@@ -83,6 +86,17 @@ a {
 h1, h2, h3 {
   color: var(--col-txt);
   font-family: 'SourceSerif4', serif;
+}
+
+main > .container > h1 {
+  font-size: 3.0em;
+  font-weight: 600;
+  line-height: 1.0em;
+  margin-bottom: 0;
+}
+main > .container > h1 + p {
+    margin: 5px 0 0px 0px;
+    font-size: 1.1em;
 }
 
 .overlay-open,
@@ -134,6 +148,7 @@ h1, h2, h3 {
 
 .post-content {
   font-size: 1.1em;
+  line-height: 25px;
 }
 
 .post-with-thumbnail {
@@ -147,10 +162,10 @@ h1, h2, h3 {
 
 .post-thumbnail-container {
   position: relative;
-  min-height: 450px;
   overflow: hidden;
   margin: 5px;
   border-radius: 5px;
+  aspect-ratio: 16 / 9;
 }
 
 .post-thumbnail-bg {
@@ -181,13 +196,13 @@ h1, h2, h3 {
 .overlay-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 10px;
 }
 
 .post-overlay h2 {
   color: var(--col-txt2);
-  margin-bottom: -15px;
-  font-size: 2.5em;
+  margin-bottom: -13px;
+  font-size: 2.7em;
   font-weight: 600;
   display: block;
   line-height: 1;
@@ -203,20 +218,14 @@ h1, h2, h3 {
   text-decoration: underline;
 }
 
-.post-overlay .post-content {
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 20px;
-}
-
 nav ul {
-  list-style: none;
-  padding: 0;
   text-align: left;
   position: absolute;
   z-index: 1337;
   top: 35px;
   left: 0px;
   background-color: var(--col-bg);
+  box-shadow: var(--shadow);
 }
 
 nav ul li {
@@ -231,6 +240,10 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #007cba;
+}
+
+.post-single p, .post-single ol {
+  font-family: 'SourceSerif4';
 }
 
 footer {
@@ -261,6 +274,10 @@ footer {
 
   .post-content {
     font-size: 0.8em;
+  }
+
+  .post-thumbnail-container {
+    aspect-ratio: 9 / 16;
   }
 }
 

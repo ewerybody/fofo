@@ -10,10 +10,14 @@ Author: ëRiC
   --col-txt2: #fff;
   --col-bg: #fff;
   --shadow: 0 3px 20px #0004;
+  --gap_desktop: 40px;
+  --gap_mobile: 20px;
+  --gap_main_cards: 5px;
 }
 
 body {
   font-family: 'SourceSans3', sans-serif;
+  font-variation-settings: 'opsz' 14;
   margin: 0;
   padding: 0;
   background: var(--col-bg);
@@ -22,7 +26,7 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 45px 0 25px 0;
+  padding: 45px var(--gap_mobile) 25px var(--gap_mobile);
 }
 
 header {
@@ -92,11 +96,12 @@ main > .container > h1 {
   font-size: 3.0em;
   font-weight: 600;
   line-height: 1.0em;
-  margin-bottom: 0;
+  margin: auto var(--gap_mobile) 0 var(--gap_mobile);
 }
 main > .container > h1 + p {
-    margin: 5px 0 0px 0px;
-    font-size: 1.1em;
+    margin: 8px var(--gap_mobile) 0 var(--gap_mobile);
+    font-size: 16px;
+    line-height: 19px;
 }
 
 .overlay-open,
@@ -163,7 +168,7 @@ main > .container > h1 + p {
 .post-thumbnail-container {
   position: relative;
   overflow: hidden;
-  margin: 5px;
+  margin: var(--gap_main_cards);
   border-radius: 5px;
   aspect-ratio: 16 / 9;
 }
@@ -196,7 +201,7 @@ main > .container > h1 + p {
 .overlay-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 10px;
+  padding: calc(var(--gap_desktop) - var(--gap_main_cards));
 }
 
 .post-overlay h2 {
@@ -244,41 +249,86 @@ nav ul li a:hover {
 
 .post-single p, .post-single ol {
   font-family: 'SourceSerif4';
+  font-size: 17px;
 }
 
 footer {
-  text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-  color: #666;
+  text-align: left;
+  font-size: 14px;
 }
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .container div {
+    flex: 1;
+    margin-bottom: 30px;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 150px auto;
+  min-width: 400px;
+}
+footer a {text-decoration: none;}
+footer a:hover {text-decoration: underline;}
+footer li {
+    list-style: none;
+    padding-left: 0;
+}
+p.copyright {margin: 0;}
 
 /* Responsive */
 @media (max-width: 600px) {
-  body {
-    padding: 0;
-  }
-  .container {
-    padding: 15px;
-  }
+  body {padding: 0;}
+  .container {padding: 15px;}
 
   h1, .has-large-font-size {
     font-size: 1.5em !important;
   }
 
   h2, .post-overlay h2 {
-    font-size: 1.7em;
-    margin-bottom: -8px;
+    font-size: 30px;
+    margin-bottom: -3px;
+    line-height: 27px;
   }
 
   .post-content {
-    font-size: 0.8em;
-  }
+    font-size: 16px;
+    line-height: 19px;
+}
 
   .post-thumbnail-container {
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 365 / 600;
   }
+  .post-thumbnail-container.single {
+    aspect-ratio: 600 / 365;
+    margin-top: 20px;
+  }
+
+  #header-logo {
+    width: 22px;
+    height: 21px;
+  }
+
+  .header-icon {
+    font-size: medium;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  .header-icon img{
+    width: 20px;
+    height: 20px;
+  }
+  main > .container > h1 {
+    font-size: 30px;
+  }
+
+  .overlay-content {
+      padding: calc(var(--gap_mobile) - var(--gap_main_cards));
+}
 }
 
 @font-face {

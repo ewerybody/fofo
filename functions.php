@@ -1,17 +1,21 @@
 
 <?php
 // functions.php
-function simple_theme_setup() {
+function theme_setup() {
     // Add theme support
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
 
     // Register navigation menu
     register_nav_menus(array(
-        'main-menu' => 'Main Menu'
+        'main-menu' => 'Main Menu',
+        'footer' => 'Footer',
     ));
+    if (function_exists('pll_register_string')) {
+        pll_register_string('footer_copyright', 'All rights reserved', 'fofo');
+    }
 }
-add_action('after_setup_theme', 'simple_theme_setup');
+add_action('after_setup_theme', 'theme_setup');
 
 // Enqueue styles
 function simple_theme_styles() {

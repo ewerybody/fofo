@@ -28,11 +28,53 @@
   ✔️ Landscape: eindeutiges horizontales Seitenverhältnis
   ✔️ Portrait: eindeutiges vertikales Seitenverhältnis
   ✔️ Seitenverhältnis-Werte aus dem Layout holen
-  * Das gleiche für die single-Page! Auch im Portrait-mode Landscape!
+  ✔️ Das gleiche für die single-Page! Auch im Portrait-mode Landscape!
+
+✔️ Homepage: mobilen Ansicht: Schriftgröße sollte 16 sein, der Zeilenabstand 19.
+✔️ ⁠⁠⁠Homepage: Schriff-Abstand zum Seitenrand des Bildes. Mobil 20 Pixel. Desktop 40 Pixel
+
+
+
+✔️ Burger-Menü dreisprachig?
+  - Startseite
+  - Was ist Nascente Viva?
+  - Der Stamm
+  - Timeline
+  - Aktuelles Projekt
+  - Spenden/Helfen
+  - Presse/Preise
+
+  - Partner
+  - Team
+  - Kontakt
+
+  - Impressum
+  - Datenschutzerklärung
+
+
+
+
+* Footer wie im Layout
+  Impressum dreisprachig mit „Team“, „Kontakt“, „Partner“, „Presse/Auszeichnungen, „© Nascente Viva 2025“, „Alle Rechte vorbehalten“.
+  - Team
+  - Kontakt
+  - Partner
+  - Presse/Auszeichnungen
+
+  © Nascente Viva 2025
+  Alle Rechte vorbehalten
+
+
+* alle Artikel & Seiten checken. Duplikate weg, Rendering prüfen gegebenenfalls umbauen, code fixen
+
+* Header: Icons Abstand zum Rand Desktop & mobile 25 Pixel
+
+* Artikelseite: Volltext und Headline maximale Breite 620 Pixel, Abstand zum Rand mindestens 20 Pixel, Schrift Source Serif Regular, Größe Desktop 18/28, Mobil 17/25
 
 * Cards auf homepage komplett klickbar
 
-* Footer wie im Layout
+
+* Serif-Font austauschen https://github.com/adobe-fonts/source-serif/releases/tag/4.005R !!!
 
 * header sticky
   * Sprachen scrollen mit

@@ -19,7 +19,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
 	<?php if ( $custom_class != 'big-thumb' && $custom_class != 'no-thumb' && '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>
       <article class="post post-with-thumbnail">
-        <div class="post-thumbnail-container">
+        <div class="post-thumbnail-container single">
           <?php the_post_thumbnail('full', array('class' => 'post-thumbnail-bg')); ?>
 	    </div><!-- end .entry-thumbnail -->
     <?php else : ?>

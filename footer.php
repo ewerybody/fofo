@@ -4,7 +4,13 @@
 ?>
 
 <footer>
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.</p>
+    <div class="container">
+        <?php wp_nav_menu( 'footer' ); ?>
+        <p class="copyright">&copy;
+            <?php bloginfo('name'); ?> <?php echo date('Y');?><br>
+            <?php if (function_exists('pll__')) {echo pll__('All rights reserved');} ?>
+        </p>
+    </div>
 </footer>
 
 <?php wp_footer(); ?>

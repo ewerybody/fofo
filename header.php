@@ -18,7 +18,7 @@
     <button class="overlay-open header-icon"></button>
 
     <h1 class="site-title">
-      <a href="<?php echo home_url(); ?>">
+      <a href="<?php echo trailingslashit(home_url()); ?>">
         <img id="header-logo" src="<?php echo bloginfo('template_url')?>/assets/nv.svg">
         <?php bloginfo('name'); ?>
       </a>

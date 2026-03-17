@@ -4,7 +4,6 @@
 get_header(); ?>
 
 <?php
-$introtext = get_post_meta($post->ID, 'intro', true);
 $custom_class = get_post_meta($post->ID, 'post_class', true);
 ?>
 
@@ -21,7 +20,7 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
       <article class="post post-with-thumbnail">
         <div class="post-thumbnail-container single">
           <?php the_post_thumbnail('full', array('class' => 'post-thumbnail-bg')); ?>
-	    </div><!-- end .entry-thumbnail -->
+	    </div>
     <?php else : ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class($custom_class); ?>>
 	<?php endif; ?>

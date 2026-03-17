@@ -1,4 +1,3 @@
-
 <?php
 // functions.php
 function theme_setup() {
@@ -33,4 +32,3 @@ add_filter('excerpt_length', 'simple_theme_excerpt_length');
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'rsd_link');
-?>

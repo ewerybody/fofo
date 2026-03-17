@@ -6,17 +6,18 @@ Author: ëRiC
 */
 
 :root {
-  --col-txt: #333;
+  --col-txt: #000;
   --col-txt2: #fff;
   --col-bg: #fff;
   --shadow: 0 3px 20px #0004;
   --gap_desktop: 40px;
   --gap_mobile: 20px;
   --gap_main_cards: 5px;
+  --max-width: 620px;
 }
 
 body {
-  font-family: 'SourceSans3', sans-serif;
+  font-family: 'SourceSerif4', serif;
   font-variation-settings: 'opsz' 14;
   margin: 0;
   padding: 0;
@@ -24,14 +25,14 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 45px var(--gap_mobile) 25px var(--gap_mobile);
+  padding: 45px var(--gap_mobile) 20px var(--gap_mobile);
 }
 
 header {
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 68px;
 }
 
 #header-logo {
@@ -45,10 +46,13 @@ header {
 
 .header-content {
   margin: auto;
-  max-width: 800px;
+  /* max-width: var(--max-width); */
   display: flex;
   flex-direction: row;
-  position: relative;
+  position: fixed;
+  background-color: var(--col-bg);
+  z-index: 1337;
+  width: 100%;
 }
 
 ul.lang-list {
@@ -56,6 +60,8 @@ ul.lang-list {
     display: inline-flex;
     margin: 1px;
     padding-left: 0;
+    position: relative;
+    top: 60px;
 }
 
 li.lang-item a {
@@ -64,6 +70,7 @@ li.lang-item a {
   padding-right: 10px;
   padding-left: 10px;
   font-size: smaller;
+  font-family: 'SourceSans3', sans-serif;
 }
 li.lang-item:last-child a {border:none}
 li.lang-item a:hover {text-decoration: underline;}
@@ -73,11 +80,10 @@ li.lang-item.current-lang {font-weight: bold;}
   margin: 0px;
   align-self: center;
   width: 100%;
-  font-size: 2.6em;
 }
 
 .site-title a {
-  font-family: 'SourceSerif4', serif;
+  font-size: 45px;
   font-weight: 500;
   text-decoration: none;
   color: var(--col-txt);
@@ -89,19 +95,19 @@ a {
 
 h1, h2, h3 {
   color: var(--col-txt);
-  font-family: 'SourceSerif4', serif;
 }
 
 main > .container > h1 {
-  font-size: 3.0em;
-  font-weight: 600;
-  line-height: 1.0em;
-  margin: auto var(--gap_mobile) 0 var(--gap_mobile);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin: var(--gap_mobile) 0;
 }
 main > .container > h1 + p {
-    margin: 8px var(--gap_mobile) 0 var(--gap_mobile);
-    font-size: 16px;
-    line-height: 19px;
+    font-family: 'SourceSans3', sans-serif;
+    font-size: 19px;
+    line-height: 23px;
+    margin: var(--gap_mobile) 0;
 }
 
 .overlay-open,
@@ -152,6 +158,7 @@ main > .container > h1 + p {
 }
 
 .post-content {
+  font-family: 'SourceSans3';
   font-size: 1.1em;
   line-height: 25px;
 }
@@ -183,6 +190,12 @@ main > .container > h1 + p {
   z-index: 1;
 }
 
+.post-thumbnail-container.single {
+  max-width: 1000px;
+  width: calc(100% - 2 * var(--gap_main_cards));
+  margin: var(--gap_main_cards) auto;
+}
+
 .post-overlay {
   position: absolute;
   top: 0;
@@ -199,7 +212,7 @@ main > .container > h1 + p {
 }
 
 .overlay-content {
-  max-width: 800px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: calc(var(--gap_desktop) - var(--gap_main_cards));
 }
@@ -248,17 +261,19 @@ nav ul li a:hover {
 }
 
 .post-single p, .post-single ol {
-  font-family: 'SourceSerif4';
-  font-size: 17px;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 footer {
   text-align: left;
   font-size: 14px;
+  font-family: 'SourceSans3', sans-serif;
 }
 footer .container {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 footer .container div {
     flex: 1;
@@ -269,7 +284,6 @@ footer ul {
   padding: 0;
   display: grid;
   grid-template-columns: 150px auto;
-  min-width: 400px;
 }
 footer a {text-decoration: none;}
 footer a:hover {text-decoration: underline;}
@@ -279,13 +293,23 @@ footer li {
 }
 p.copyright {margin: 0;}
 
+figcaption {
+    font-family: 'SourceSans3', sans-serif;
+    font-size: 14px;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   body {padding: 0;}
   .container {padding: 15px;}
 
-  h1, .has-large-font-size {
+  /* h1, .has-large-font-size {
     font-size: 1.5em !important;
+  } */
+  .site-title a {
+    font-size: 26px;
+    top: -8px;
+    position: relative;
   }
 
   h2, .post-overlay h2 {
@@ -297,14 +321,19 @@ p.copyright {margin: 0;}
   .post-content {
     font-size: 16px;
     line-height: 19px;
-}
+  }
+
+  .post-single p, .post-single ol {
+    font-size: 17px;
+    line-height: 25px;
+  }
 
   .post-thumbnail-container {
     aspect-ratio: 365 / 600;
   }
   .post-thumbnail-container.single {
     aspect-ratio: 600 / 365;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   #header-logo {
@@ -322,13 +351,25 @@ p.copyright {margin: 0;}
     width: 20px;
     height: 20px;
   }
+  ul.lang-list {top: 38px;}
   main > .container > h1 {
     font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-top: 13px;
+    margin-bottom: 6px;
+  }
+  main > .container > h1 + p {
+    font-size: 16px;
+    margin-top: 0px;
   }
 
   .overlay-content {
       padding: calc(var(--gap_mobile) - var(--gap_main_cards));
-}
+  }
+  footer .container {
+      flex-direction: column;
+  }
 }
 
 @font-face {

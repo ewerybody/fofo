@@ -12,7 +12,7 @@ Author: ëRiC
   --shadow: 0 3px 20px #0004;
   --gap_desktop: 40px;
   --gap_mobile: 20px;
-  --gap_main_cards: 5px;
+  --gap_small: 5px;
   --max-width: 620px;
 }
 
@@ -30,12 +30,19 @@ body {
   padding: 45px var(--gap_mobile) 20px var(--gap_mobile);
 }
 
+a {
+  color: var(--col-txt);
+}
+
+h1, h2, h3 {
+  color: var(--col-txt);
+}
+
 header {
   text-align: center;
-  padding-bottom: 72px;
-  margin: 0px 5px;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 11px;
+  padding-bottom: 74px;
+  margin: 0 var(--gap_small) 10px var(--gap_small);
 }
 
 #header-logo {
@@ -44,24 +51,37 @@ header {
   width: 36px;
   height: 36px;
   position: relative;
-  top: 1px;
+  top: 3px;
 }
 
 .header-content {
-  margin: auto;
-  /* max-width: var(--max-width); */
-  display: flex;
-  flex-direction: row;
   position: fixed;
-  background-color: var(--col-bg);
+  left: 0;
+  right: 0;
   z-index: 1337;
-  width: 100%;
+  display: flex;
+  height: 58px;
+  align-items: center;
+  padding: 0 var(--gap_mobile);
+  background-color: var(--col-bg);
+}
+
+.header-icon {
+  flex-shrink: 0;
+  height: 20px;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
 }
 
 ul.lang-list {
     list-style: none;
     display: inline-flex;
-    margin: 0px;
+    margin: 0;
     padding-left: 0;
     position: relative;
     top: 60px;
@@ -69,7 +89,7 @@ ul.lang-list {
 
 li.lang-item a {
   text-decoration: none;
-  border-right: 1.5px solid;
+  border-right: 2px solid;
   padding-right: 10px;
   padding-left: 10px;
   font-size: smaller;
@@ -80,10 +100,9 @@ li.lang-item a:hover {text-decoration: underline;}
 li.lang-item.current-lang {font-weight: bold;}
 
 .site-title {
+  flex: 1;
   margin: 0;
-  margin-top: -2px;
-  align-self: center;
-  width: 100%;
+  text-align: center;
 }
 
 .site-title a {
@@ -93,13 +112,8 @@ li.lang-item.current-lang {font-weight: bold;}
   color: var(--col-txt);
 }
 
-a {
-  color: var(--col-txt);
-}
-
-h1, h2, h3 {
-  color: var(--col-txt);
-}
+.menu-overlay {display: none;}
+.menu-overlay-x {display: block;}
 
 main > .container > h1 {
   font-size: 50px;
@@ -112,49 +126,6 @@ main > .container > h1 + p {
     font-size: 19px;
     line-height: 23px;
     margin: var(--gap_mobile) 0;
-}
-
-.overlay-open,
-.overlay-close {
-	left: 5px;
-}
-
-.menu-overlay {display: none;}
-.menu-overlay-x {display: block;}
-
-.header-icon {
-  position: relative;
-  top: 5px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  outline: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-  z-index: 9999;
-  background: transparent;
-  line-height: 0;
-  opacity: 1;
-  font-size: large;
-  align-content: center;
-}
-
-.overlay-open:before {
-	display: block;
-    content: '☰';
-}
-.overlay-btn-x:before {
-    content: '⛌';
-}
-.close-btn-wrap {
-	height: 51px;
-	border-bottom: 1px solid #ddd;
-	background: #fff;
-}
-
-.social-icon {
-    right: 5px;
 }
 
 .post {
@@ -179,8 +150,8 @@ main > .container > h1 + p {
 .post-thumbnail-container {
   position: relative;
   overflow: hidden;
-  margin: var(--gap_main_cards);
-  border-radius: 5px;
+  margin: var(--gap_small);
+  border-radius: var(--gap_small);
   aspect-ratio: 16 / 9;
 }
 
@@ -196,11 +167,11 @@ main > .container > h1 + p {
 
 .post-thumbnail-container.single {
   max-width: 1000px;
-  width: calc(100% - 2 * var(--gap_main_cards));
-  margin: var(--gap_main_cards) auto;
+  width: calc(100% - 2 * var(--gap_small));
+  margin: var(--gap_small) auto;
 }
 
-.post-overlay {
+.postcard {
   position: absolute;
   top: 0;
   left: 0;
@@ -218,10 +189,10 @@ main > .container > h1 + p {
 .overlay-content {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: calc(var(--gap_desktop) - var(--gap_main_cards));
+  padding: calc(var(--gap_desktop) - var(--gap_small));
 }
 
-.post-overlay h2 {
+.postcard h2 {
   color: var(--col-txt2);
   margin-bottom: -13px;
   font-size: 2.7em;
@@ -230,14 +201,22 @@ main > .container > h1 + p {
   line-height: 1;
 }
 
-.post-overlay h2 a {
+.postcard h2 a {
   color: var(--col-txt2);
   text-decoration: none;
 }
 
-.post-overlay h2 a:hover {
+.postcard h2 a:hover {
   color: var(--col-txt2);
   text-decoration: underline;
+}
+
+.postcard > a {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  position: absolute;
+  left: 0;
 }
 
 nav ul {
@@ -302,21 +281,17 @@ figcaption {
     font-size: 14px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
-  body {padding: 0;}
   .container {padding: 15px;}
 
-  /* h1, .has-large-font-size {
-    font-size: 1.5em !important;
-  } */
-  .site-title a {
-    font-size: 26px;
-    top: -4px;
-    position: relative;
-  }
+  header { padding-bottom: 53px; margin-bottom: 17px ;}
+  .header-content {height: 32px;}
+  .header-icon {top: 3px;}
+  .site-title a { font-size: 26px; }
+  #header-logo { width: 22px; height: 22px; }
+  ul.lang-list { top: 39px; }
 
-  h2, .post-overlay h2 {
+  h2, .postcard h2 {
     font-size: 30px;
     margin-bottom: -3px;
     line-height: 27px;
@@ -340,24 +315,6 @@ figcaption {
     margin-top: 0px;
   }
 
-  header {padding-bottom: 47px;}
-
-  #header-logo {
-    width: 22px;
-    height: 21px;
-  }
-
-  .header-icon {
-    font-size: medium;
-    top: 8px;
-    width: 20px;
-    height: 20px;
-  }
-  .header-icon img{
-    width: 20px;
-    height: 20px;
-  }
-  ul.lang-list {top: 38px;}
   main > .container > h1 {
     font-size: 30px;
     line-height: 30px;
@@ -371,7 +328,7 @@ figcaption {
   }
 
   .overlay-content {
-      padding: calc(var(--gap_mobile) - var(--gap_main_cards));
+      padding: calc(var(--gap_mobile) - var(--gap_small));
   }
   footer .container {
       flex-direction: column;

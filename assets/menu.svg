@@ -1,1 +1,1 @@
-<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="16" height="2"/><rect x="2" y="9" width="16" height="2"/><rect x="2" y="16" width="16" height="2"/></svg>
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect id="r" x="2" y="2" width="16" height="2"/><use transform="translate(0,7)" xlink:href="#r"/><use transform="translate(0,14)" xlink:href="#r"/></svg>

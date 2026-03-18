@@ -15,7 +15,9 @@
 
 <header>
   <div class="header-content">
-    <button class="overlay-open header-icon"></button>
+    <button class="overlay-open header-icon">
+        <img src="<?php echo bloginfo('template_url')?>/assets/menu.svg">
+    </button>
 
     <h1 class="site-title">
       <a href="<?php echo trailingslashit(home_url()); ?>">

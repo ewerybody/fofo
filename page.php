@@ -13,7 +13,6 @@ $custom_class = get_post_meta($post->ID, 'post_class', true);
 
     <div class="container">
       <h1><?php the_title(); ?></h1>
-      <?php the_excerpt(); ?>
     </div>
 
 	<?php if ( $custom_class != 'big-thumb' && $custom_class != 'no-thumb' && '' != get_the_post_thumbnail() && ! post_password_required() ) : ?>

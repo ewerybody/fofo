@@ -1,5 +1,20 @@
 {
     "files.watcherExclude": {
         "**/.*/**": true,
+    },
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#00963F",
+        "tab.activeForeground": "#fff",
+        "gitDecoration.ignoredResourceForeground": "#fff",
+        "gitDecoration.untrackedResourceForeground": "#fff",
+        "list.warningForeground": "#ff0",
+        "tab.inactiveBackground": "#111829",
+        "tab.inactiveForeground": "#9ca6b9",
+        "tab.hoverBackground": "#003060",
+        "statusBar.debuggingBackground": "#00963F",
+        "statusBar.background": "#00963F",
+        "statusBar.foreground": "#fff",
+        "titleBar.activeBackground": "#00963F",
+        "titleBar.activeForeground": "#fff",
     }
 }

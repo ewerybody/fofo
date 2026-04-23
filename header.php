@@ -24,7 +24,7 @@
       </a>
     </h1>
 
-    <a class="social-icon header-icon" href="https://www.instagram.com/nascentevivadourados" target="_blank">
+    <a class="social-icon header-icon" href="https://instagram.com/nascentevivaoficial" target="_blank">
         <img src="<?php echo bloginfo('template_url')?>/assets/insta.svg">
     </a>
 

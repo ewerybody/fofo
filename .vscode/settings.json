@@ -15,6 +15,7 @@
         "statusBar.background": "#00963F",
         "statusBar.foreground": "#fff",
         "titleBar.activeBackground": "#00963F",
+        "titleBar.inactiveBackground": "#00963F",
         "titleBar.activeForeground": "#fff",
     }
 }

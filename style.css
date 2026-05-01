@@ -14,6 +14,8 @@ Author: ëRiC
   --gap_mobile: 20px;
   --gap_small: 5px;
   --max-width: 620px;
+  --line: 1px solid #D3D3D3;
+  --gap-post-bottom: calc(80px - var(--gap_small) - var(--gap_mobile) * 2);
 }
 
 body {
@@ -24,23 +26,21 @@ body {
   background: var(--col-bg);
 }
 
+body.wp-singular main { margin-bottom: var(--gap-post-bottom);}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 45px var(--gap_mobile) 20px var(--gap_mobile);
+  padding: 45px var(--gap_mobile) var(--gap_mobile) var(--gap_mobile);
 }
 
-a {
-  color: var(--col-txt);
-}
+a { color: var(--col-txt);}
 
-h1, h2, h3 {
-  color: var(--col-txt);
-}
+h1, h2, h3 { color: var(--col-txt);}
 
 header {
   text-align: center;
-  border-bottom: 1px solid #ccc;
+  border-bottom: var(--line);
   padding-bottom: 74px;
   margin: 0 var(--gap_small) 10px var(--gap_small);
 }
@@ -129,9 +129,7 @@ main > .container > h1 + p {
     margin: var(--gap_mobile) 0;
 }
 
-.post {
-  margin-bottom: 40px;
-}
+.post { margin-bottom: 40px; }
 
 .post-content {
   font-family: 'SourceSans3';
@@ -250,12 +248,15 @@ nav ul li a:hover {
 .post-single p, .post-single ol {
     font-size: 18px;
     line-height: 28px;
+    margin: var(--gap_mobile) 0;
 }
 
 footer {
   text-align: left;
   font-size: 14px;
   font-family: 'SourceSans3', sans-serif;
+  border-top: var(--line);
+  margin: var(--gap_small);
 }
 footer .container {
   display: flex;
@@ -298,7 +299,7 @@ figcaption {
 }
 
 @media (max-width: 600px) {
-  .container {padding: 15px;}
+  .container {padding: var(--gap_mobile);}
 
   header { padding-bottom: 53px; margin-bottom: 17px ;}
   .header-content {height: 32px;}

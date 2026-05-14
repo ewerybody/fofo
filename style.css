@@ -10,12 +10,13 @@ Author: ëRiC
   --col-txt2: #fff;
   --col-bg: #fff;
   --shadow: 0 3px 20px #0004;
+  --max-width: 620px;
+  --line: 1px solid #D3D3D3;
   --gap_desktop: 40px;
   --gap_mobile: 20px;
   --gap_small: 5px;
-  --max-width: 620px;
-  --line: 1px solid #D3D3D3;
-  --gap-post-bottom: calc(80px - var(--gap_small) - var(--gap_mobile) * 2);
+  --gap_post_bottom: calc(80px - var(--gap_small) - var(--gap_mobile) * 2);
+  --gap_footer_bottom: calc(100px - var(--gap_mobile) * 2);
 }
 
 body {
@@ -26,7 +27,7 @@ body {
   background: var(--col-bg);
 }
 
-body.wp-singular main { margin-bottom: var(--gap-post-bottom);}
+body.wp-singular main { margin-bottom: var(--gap_post_bottom);}
 
 .container {
   max-width: var(--max-width);
@@ -255,6 +256,7 @@ footer {
   text-align: left;
   font-size: 14px;
   font-family: 'SourceSans3', sans-serif;
+  font-weight: 500;
   border-top: var(--line);
   margin: var(--gap_small);
 }
@@ -262,16 +264,17 @@ footer .container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-bottom: var(--gap_footer_bottom);
 }
 footer .container div {
     flex: 1;
-    margin-bottom: 30px;
+    margin-bottom: var(--gap_mobile);
 }
 footer ul {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 150px auto;
+  grid-template-columns: 125px auto;
 }
 footer a {text-decoration: none;}
 footer a:hover {text-decoration: underline;}
@@ -299,6 +302,8 @@ figcaption {
 }
 
 @media (max-width: 600px) {
+  :root {--gap_footer_bottom: calc(100px - var(--gap_mobile));}
+
   .container {padding: var(--gap_mobile);}
 
   header { padding-bottom: 53px; margin-bottom: 17px ;}

@@ -152,7 +152,7 @@ main > .container > h1 + p {
   overflow: hidden;
   margin: var(--gap_small);
   border-radius: var(--gap_small);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 2 / 1;
 }
 
 .post-thumbnail-bg {
@@ -330,10 +330,10 @@ figcaption {
   }
 
   .post-thumbnail-container {
-    aspect-ratio: 365 / 600;
+    aspect-ratio: 2 / 3;
   }
   .post-thumbnail-container.single {
-    aspect-ratio: 600 / 365;
+    aspect-ratio: 3 / 2;
     margin-top: 0px;
   }
 
